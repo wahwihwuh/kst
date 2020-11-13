@@ -14,7 +14,7 @@ exports.getFoodMenu = async (req, res) => {
         const response = await FoodMenuSvc.getFoodMenu(req, res)
         return res.json(response);
     } catch (err) {
-        return res.json(err);
+        return res.status(400).json(err.message);
     }
 }
 

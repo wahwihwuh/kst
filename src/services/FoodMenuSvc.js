@@ -40,6 +40,8 @@ exports.getFoodMenu = async (req, res) => {
     param.page = param.page || 1;
 
     const data = await FoodMenuRepo.getAll(param);
+    if (data.length === 0 && param.Id !== undefined) throw new Error(`Cannot find any menu with category ID ${param.Id}`);
+
     const foodMenus = new Map();
 
     if (data.length > 0) {
@@ -69,6 +71,7 @@ exports.getFoodMenu = async (req, res) => {
         result.push(foodMenu);
     }
 
+    if (param.Id !== undefined) return result[0];
     return result;
 }
 
