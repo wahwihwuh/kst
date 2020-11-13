@@ -1,6 +1,5 @@
 <p align="center">
-    <h2 align="center">Book App</h2>
-    <h4 align="center">I'm just messing around with this</h4>
+    <h2 align="center">KST</h2>
 </p>
 
 ---
